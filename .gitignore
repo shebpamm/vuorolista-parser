@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+
+# The job lists as they are private:
+listat/*.pdf
