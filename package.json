@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "build": "babel ./src/ --out-dir dist/ --copy-files",
+    "start": "npm run build && node dist/index.js",
+    "clean": "rimraf dist/**",
+    "recompile": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,10 @@
   },
   "homepage": "https://github.com/shebpamm/vuorolista-parser#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "pdf-table-extractor": "^1.0.3",
-    "pdfjs-dist": "^2.2.228"
+    "pdfjs-dist": "^2.2.228",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

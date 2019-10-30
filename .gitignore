@@ -62,3 +62,6 @@ typings/
 
 # The job lists as they are private:
 listat/*.pdf
+
+# compiled
+dist
