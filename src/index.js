@@ -1,10 +1,15 @@
+/* Backend API Loadup Script */
+
 const express = require('express');
 
 const apiRouter = require('./routers/apiRouter');
 const viewRouter = require('./routers/viewRouter');
 
 const app = express();
-const port = 3000;
+const port = 3001;
+
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
 
 app.set('views', './dist/views');
 app.set('view engine', 'pug');

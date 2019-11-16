@@ -1,0 +1,22 @@
+{
+  "base": "semantic\\",
+  "paths": {
+    "source": {
+      "config": "src/theme.config",
+      "definitions": "src/definitions/",
+      "site": "src/site/",
+      "themes": "src/themes/"
+    },
+    "output": {
+      "packaged": "../src/dist/",
+      "uncompressed": "../src/dist/components/",
+      "compressed": "../src/dist/components/",
+      "themes": "../src/dist/themes/"
+    },
+    "clean": "../src/dist/"
+  },
+  "permission": false,
+  "autoInstall": false,
+  "rtl": false,
+  "version": "2.7.8"
+}

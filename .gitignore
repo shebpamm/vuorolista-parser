@@ -65,3 +65,4 @@ listat/*.pdf
 
 # compiled
 dist
+semantic/*
