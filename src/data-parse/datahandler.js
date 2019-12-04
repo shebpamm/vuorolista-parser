@@ -58,7 +58,7 @@ class WorkData {
       }
 
       rawData.pageTables[2].tables = jsonD.pageTables[numPages - 1].tables
-      console.log(rawData.pageTables[1])
+      //console.log(rawData.pageTables[1])
       return rawData
   }
 
@@ -83,7 +83,7 @@ class WorkData {
               end: times[1].padEnd(5, "0")
           }
 
-          console.log(parsed)
+          //console.log(parsed)
       })
 
       this.rawData.pageTables.slice(0, -1).forEach((page, pix) => {
@@ -94,7 +94,7 @@ class WorkData {
                   if(pday != "" && !/\d+:\d/.test(pday)) { //Tests if the table content is empty or the sum of work hours(e.g 127:0)
                       let daydate = moment(this.startdate).add(dix+21*pix, 'days')
 
-                      let abb = this.abbreviations[pday.toUpperCase()]
+                      let abb = this.abbreviations[pday.toUpperCase().replace('*', '')]
 
                       if (abb != undefined) {
 
@@ -105,7 +105,7 @@ class WorkData {
                           let startdate = moment(daydate).set({'hour' : startH, 'minute' : startM })
                           let enddate = moment(daydate).set({'hour' : endH, 'minute' : endM })
 
-
+                          if(endH < startH) enddate.add(1, 'day')
 
                           this.people.calendars[tix].createEvent({
                               start: startdate.toDate(),
