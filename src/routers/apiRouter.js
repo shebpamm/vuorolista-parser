@@ -40,7 +40,6 @@ router.get("/workers/:uid/calendar", function(req, res, next) {
 
         res.send(ans[0].calendar.toString())
         };
-    console.log(ans[0].calendar.toString())
 });
 
 router.get("/abbreviations", function(req, res, next) {
