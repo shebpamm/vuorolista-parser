@@ -9,15 +9,22 @@ class WorkerDropdown extends React.Component {
         };
     }
     componentDidMount() {
-        fetch("api/workers/names")
-        .then(response => response.json())
-        .then(data => this.setState({ workers: data.map(
-            (d) => {
-                return { key: d.replace("\n", " "), value: d.replace("\n", " "), text: d.replace("\n", " ") }
 
-            }
-        ) })
-    );
+        Promise.all([
+            fetch("api/workers/names").then(response => response.json()),
+            fetch("api/workers/uuids").then(response => response.json())
+
+        ]).then((data) => {
+
+            var [names, uuids] = data
+            this.setState({ workers: uuids.map(
+                (uuid, idx) => {
+                    return { key:  names[idx].replace("\n", " "), value: uuid, text:  names[idx].replace("\n", " ") }
+                        }
+                    )})
+                })
+
+
 }
 
 render() {
@@ -27,6 +34,7 @@ render() {
     search
     selection
     options={this.state.workers}
+    onChange={(e, {value}) => this.props.selectHandler(value)}
     />
 }
 }
