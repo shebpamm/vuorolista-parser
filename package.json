@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/shebpamm/vuorolista-parser#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ical-generator": "^1.9.1",
     "ics": "^2.18.0",
     "moment": "^2.24.0",
